@@ -1,0 +1,42 @@
+
+
+<button ng-click="insertNewLine()" type="button" class="btn btn-primary" data-animation="am-fade-and-scale" data-template="frontend/components/project/views/project.create.html" data-placement="center" bs-modal="modal">
+    <i class="fa fa-graduation-cap"></i> Create Project
+</button>
+
+<br/><br/>
+
+<table ng-table  class="table table-bordered table-hover">
+     <tr ng-repeat="project in projects">
+         <td data-title="'Project Name'">
+           {{project.name}}
+         </td>
+         <td data-title="'Project Name'">
+           {{project.creationDate}}
+         </td>
+         <td data-title="'Due Date'">
+           {{project.dueDate}}
+         </td>
+         <td data-title="'Git Host'">
+           {{project.gitHost}}
+         </td>
+         <td data-title="'Git Username'">
+           {{project.gitUsername}}
+         </td>
+         <td data-title="'Git Project Name'">
+           {{project.gitProjectName}}
+         </td>
+
+         <td data-title="'Prix'" width="200">
+             <button ng-click="loadPrices(project)" type="button" class="btn btn-default" data-animation="am-fade-and-scale" data-template="frontend/components/project/views/project.edit.html" data-placement="center" bs-modal="modal">
+                 <i class="fa fa-pencil-square-o"></i> Edit
+             </button>
+         </td>
+         <td data-title="'Supprimer'" width="200" class="text-center">
+
+             <button ng-click="confirmDeletion(project)" type="button" class="btn btn-danger" data-animation="am-fade-and-scale" data-template="frontend/components/project/views/project.confirm.html" data-placement="center" bs-modal="modal">
+                 <i class="fa fa-trash"></i> DELETE
+             </button>
+         </td>
+     </tr>
+</table>
