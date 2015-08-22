@@ -9,8 +9,9 @@ var app =  angular.module('module.app',
 										'Const',
 										'module.user',
 										'module.toolbar',
-										'module.level',
-										'module.payment'
+										'module.project'
+										// 'module.level',
+										
 										]);
 
 										//initialize toolbar just by injectin it
