@@ -16,7 +16,12 @@ $urlRouterProvider.otherwise('/login');
                 .state('user', {
                                       url: '/user',
                                       templateUrl: 'frontend/components/user/views/user.html',
-                											controller: 'userController'
+                                                            controller: 'userController'
+                                })
+                .state('todo', {
+                                      url: '/todo',
+                                      templateUrl: 'frontend/components/todo/views/todo.html',
+                											controller: 'todoController'
                                 })
                 // .state('payment', {
                 //                       url: '/payment',

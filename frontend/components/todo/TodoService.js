@@ -52,21 +52,22 @@ todoModule.factory('todoService', function(DB_URL) {
 						});
 
 					},
+
 					upserttodo: function(todo,callback) {
 						var Datastore = require('nedb')
 						, path = require('path');
 						db = {};
 						db.todos = new Datastore({ filename:DB_URL+'/todos.db',autoload: true });
-
+						console.log(JSON.stringify(todo));
 						db.todos.update({_id: todo._id}, {
-							_id: todo._id,
 							title: todo.title,
 							description: todo.description,
 							creationDate: new Date(),
 							dueDate: todo.dueDate,
 							closingDate: todo.closingDate,
-							gitCommit: todo.gitCommit
-
+							gitCommit : todo.gitCommit,
+							priority: todo.priority,
+							isFinished: todo.isFinished
 
 						}, {upsert:true}, function(err,numReplaced,lv){
 							if(err)

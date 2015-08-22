@@ -9,8 +9,8 @@ var app =  angular.module('module.app',
 										'Const',
 										'module.user',
 										'module.toolbar',
-										'module.project'
-										// 'module.level',
+										'module.project',
+										'module.todo'
 										
 										]);
 

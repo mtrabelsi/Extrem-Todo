@@ -40,7 +40,12 @@ $scope.deleteLastLine = function () {
 $scope.insertNewLine = function() {
     $scope.addedtodo = {
       _id: '',
-
+      title : '',
+      description: '',
+      dueDate :'',
+      gitCommit :'',
+      priority: '',
+      isFinished : false
     };
 
    $scope.todos.push($scope.addedtodo);

@@ -12,10 +12,10 @@
            {{project.name}}
          </td>
          <td data-title="'Creation Date'">
-           {{project.creationDate}}
+           {{project.creationDate | date:'MM/dd/yyyy'}}
          </td>
          <td data-title="'Due Date'">
-           {{project.dueDate}}
+           {{project.dueDate | date:'MM/dd/yyyy'}}
          </td>
          <td data-title="'Git Host'">
            {{project.gitHost}}

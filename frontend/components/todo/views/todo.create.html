@@ -1,32 +1,34 @@
 <div class="modal" tabindex="-1" role="dialog" aria-hidden="true" ng-controller="todoController">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" aria-label="Close" ng-click="$hide()"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Add new todo</h4>
+            </div>
+            <div class="modal-body">
+                <form role="form">
+                    title:
+                    <input type="text" class="form-control" ng-model="addedtodo.title" /> Description:
+                    <input type="text" class="form-control" ng-model="addedtodo.description" />
+                    <div class="form-group" ng-class="{'has-error': datepickerForm.date.$invalid}">
+                        <label class="control-label"><i class="fa fa-calendar"></i> Due Date </label>
+                        <input type="text" class="form-control" ng-model="addedtodo.dueDate" name="date" bs-datepicker>
+                    </div>
+                    Priority:
+                      <input type="number" ng-model="addedtodo.priority" class="form-control" name="points" min="0" max="100" step="1" value="1">
+                    Git Commit reference:
+                    <input type="text" class="form-control" ng-model="addedtodo.gitCommit" /> 
 
-  <div class="modal-dialog">
-    <div class="modal-content">
-
-      <div class="modal-header">
-        <button type="button" class="close" aria-label="Close" ng-click="$hide()"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">add n</h4>
-      </div>
-
-  <div class="modal-body">
-
-        <form role="form">
-        n:  <input type="text" class="form-control" ng-model="addedtodo._id"/>
-
-        </form>
-
-</div>
-
-      <div class="modal-footer">
-          <button type="button" class="btn btn-danger" ng-click="$parent.deleteLastLine();$hide();">
-              <i class="fa fa-times"></i> cancel
-          </button>
-          <button type="button" class="btn btn-primary" ng-click="upsert(addedtodo);$hide();">
-              <i class="fa fa-plus"></i> add
-          </button>
-      </div>
-
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" ng-click="$parent.deleteLastLine();$hide();">
+                    <i class="fa fa-times"></i> CANCEL
+                </button>
+                <button type="button" class="btn btn-primary" ng-click="$parent.upsert(addedtodo);$hide();">
+                    <i class="fa fa-plus"></i> Add
+                </button>
+            </div>
+        </div>
     </div>
-
-  </div>
 </div>

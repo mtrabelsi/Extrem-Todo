@@ -44,10 +44,9 @@
     <script src="frontend/common/login/LoginService.js"></script>
     <!-- toolbar -->
     <script src="frontend/common/toolbar/ToolbarService.js"></script>
-    <!-- todo 
+    <!-- todo  -->
     <script src="frontend/components/todo/TodoController.js"></script>
     <script src="frontend/components/todo/TodoService.js"></script>
-    -->
     <!-- project -->
     <script src="frontend/components/project/ProjectController.js"></script>
     <script src="frontend/components/project/ProjectService.js"></script>
@@ -65,17 +64,14 @@
 
 <body>
     <div class="container-fluid">
-        <div class="col-md-2">
+        <div class="col-md-2" ng-controller="projectController">
             <div class="list-group" ng-if="user.loggedin">
-                <li class="list-group-item list-group-item-success"><b> Menu </b></li>
-                <a class="list-group-item" href="#" ui-sref="user">
-                    <li class="fa fa-users lg"> </li> Manage users</a>
-                <a class="list-group-item" href="#" ui-sref="payment">
-                    <li class="fa fa-cart-plus lg"> </li> payment</a>
-                <a class="list-group-item disabled" href="#">
-                    <li class="fa fa-history lg"> </li> History</a>
-                <a class="list-group-item disabled" href="#">
-                    <li class="fa fa-exclamation-triangle lg"> </li> Not payed</a>
+                <li class="list-group-item list-group-item-success"><b> Projects </b></li>
+                <div ng-repeat="project in projects">
+                    <a class="list-group-item"  ui-sref="todo">
+                        <i class="fa fa-folder"></i>
+                         {{project.name}}</a>
+                </div>
             </div>
         </div>
         <div class="col-md-10">

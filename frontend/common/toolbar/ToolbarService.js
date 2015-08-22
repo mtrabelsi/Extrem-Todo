@@ -15,7 +15,14 @@ toolbarModule.factory('Toolbar', function($state) {
         $state.go('project');
   }}));
 
-  admin.append(new gui.MenuItem({ label: 'Manage Users',enabled: false }));
+  admin.append(new gui.MenuItem({ label: 'Manage Users',enabled: true ,click: function() {
+        $state.go('user');
+  }}));
+  
+    admin.append(new gui.MenuItem({ label: 'Manage Todos',enabled: true ,click: function() {
+        $state.go('todo');
+  }}));
+
   admin.append(new gui.MenuItem({ type: 'separator' }));
   admin.append(new gui.MenuItem({ label: 'Privacy' }));
 

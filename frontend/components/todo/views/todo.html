@@ -1,26 +1,47 @@
 
 
 <button ng-click="insertNewLine()" type="button" class="btn btn-primary" data-animation="am-fade-and-scale" data-template="frontend/components/todo/views/todo.create.html" data-placement="center" bs-modal="modal">
-    <i class="fa fa-graduation-cap"></i> Créer Niveau
+    <i class="fa fa-th-list"></i> Create todo
 </button>
 
 <br/><br/>
+
 <table ng-table  class="table table-bordered table-hover">
      <tr ng-repeat="todo in todos">
-         <td data-title="'Niveau'">
-           {{todo._id}}
-          </td>
-
-         <td data-title="'Prix'" width="200" class="text-center">
-             <button ng-click="loadPrices(todo)" type="button" class="btn btn-default" data-animation="am-fade-and-scale" data-template="frontend/components/todo/views/todo.edit.html" data-placement="center" bs-modal="modal">
-                 <i class="fa fa-pencil-square-o"></i> Modifier
-             </button>
+         <td data-title="'Status '"width="5%">
+           <button type="button" class="btn btn-default" ng-click="loadtodo(todo)" ng-model="todo.isFinished" bs-checkbox bs-modal="modal" data-animation="am-fade-and-scale" data-template="frontend/components/todo/views/todo.close.html"> <i class="fa fa-check-square-o" ng-if="todo.isFinished"></i><i class="fa fa-square-o" ng-if="!todo.isFinished"></i>
+            </button>
          </td>
-         <td data-title="'Supprimer'" width="200" class="text-center">
+         
+         <td data-title="'todo title'">
+           {{todo.title}}
+         </td>
+         <td data-title="'Creation Date'">
+           {{todo.creationDate | date:'MM/dd/yyyy'}}
+         </td>
+         <td data-title="'Due Date'">
+           {{todo.dueDate | date:'MM/dd/yyyy'}}
+         </td>
+         <td data-title="'Priority'">
+           {{todo.priority}}
+         </td>
+         <td data-title="'Git commit reference '">
+           <b>{{todo.gitCommit || 'not yet'}}</b>
+         </td>
 
-             <button ng-click="confirmDeletion(todo)" type="button" class="btn btn-danger" data-animation="am-fade-and-scale" data-template="frontend/components/todo/views/todo.confirm.html" data-placement="center" bs-modal="modal">
-                 <i class="fa fa-trash"></i> Supprimer
+         <td data-title="'Action'" width="15%">
+             <button ng-click="loadtodo(todo)" type="button" class="btn btn-default" data-animation="am-fade-and-scale" data-template="frontend/components/todo/views/todo.edit.html" data-placement="center" bs-modal="modal">
+                 <i class="fa fa-pencil-square-o"></i> Edit
              </button>
+              <button ng-click="confirmDeletion(todo)" type="button" class="btn btn-danger" data-animation="am-fade-and-scale" data-template="frontend/components/todo/views/todo.confirm.html" data-placement="center" bs-modal="modal">
+                 <i class="fa fa-trash"></i> DELETE
+             </button>
+
+         </td>
+         <td data-title="'Git'"width="7%">
+             <a ng-if="todo.isFinished" type="button" class="btn btn-default">
+                 <i class="fa fa-github-square lg"> View code change </i>
+             </a>
          </td>
      </tr>
 </table>
