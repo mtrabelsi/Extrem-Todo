@@ -13,20 +13,20 @@ $urlRouterProvider.otherwise('/login');
                                       templateUrl: 'frontend/components/level/views/level.html',
 																			controller: 'LevelController'
                                 })
-                .state('student', {
-                                      url: '/student',
-                                      templateUrl: 'frontend/components/student/views/student.html',
-                											controller: 'StudentController'
+                .state('user', {
+                                      url: '/user',
+                                      templateUrl: 'frontend/components/user/views/user.html',
+                											controller: 'userController'
                                 })
                 .state('payment', {
                                       url: '/payment',
                                       templateUrl: 'frontend/components/payment/views/payment.html',
 																			controller: 'PaymentController',
                                       resolve: {
-                                           students: function (StudentService, $q) {
+                                           users: function (userService, $q) {
                                                var defer = $q.defer();
                                                //defer.promise.then(function () {
-                                               StudentService.getAllStudents(function (sts) {
+                                               userService.getAllusers(function (sts) {
                                                    //alert(JSON.stringify(sts));
                                                    //return sts;
                                                    defer.resolve(sts);

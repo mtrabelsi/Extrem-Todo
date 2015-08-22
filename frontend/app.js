@@ -7,7 +7,7 @@ var app =  angular.module('module.app',
 
 										'module.login',
 										'Const',
-										'module.student',
+										'module.user',
 										'module.toolbar',
 										'module.level',
 										'module.payment'

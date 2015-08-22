@@ -1,4 +1,4 @@
-paymentModule.factory('PaymentService', function(DB_URL) {
+userModule.factory('userService', function(DB_URL) {
 
 
 
@@ -48,11 +48,10 @@ paymentModule.factory('PaymentService', function(DB_URL) {
 						db.users = new Datastore({ filename:DB_URL+'/users.db',autoload: true });
 
 						db.users.update({_id: user._id}, {
-									firstname: user.firstname,
-									lastname: user.lastname,
-									_levelId: user._levelId,
-									class: user.class,
-									price: user.price
+									name: user.name,
+									username: user.username,
+									password: user.password,
+									role: user.role
 						},{upsert:true}, function(err,numReplaced,lv) {
 							if(err)
 									console.log(err);
@@ -62,7 +61,7 @@ paymentModule.factory('PaymentService', function(DB_URL) {
 									callback(lv);
 								}
 						});
-			}
+					}
 		};
 
 });

@@ -1,17 +1,17 @@
-<div class="modal" tabindex="-1" role="dialog" aria-hidden="true" ng-controller="StudentController">
+<div class="modal" tabindex="-1" role="dialog" aria-hidden="true" ng-controller="userController">
 
   <div class="modal-dialog">
     <div class="modal-content">
 
       <div class="modal-header">
         <button type="button" class="close" aria-label="Close" ng-click="$hide()"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Modifier prix : <b>{{clickedStudent._id}}</b></h4>
+        <h4 class="modal-title">Modifier prix : <b>{{clickeduser._id}}</b></h4>
       </div>
 
   <div class="modal-body">
 
         <form role="form">
-          <table class="table table-bordered" ng-model="toPayStudent.products" bs-checkbox-group>
+          <table class="table table-bordered" ng-model="toPayuser.products" bs-checkbox-group>
             <thead>
               <tr>
                 <th>
@@ -122,7 +122,7 @@
         <button type="button" class="btn btn-danger" ng-click="$hide()">
             <i class="fa fa-times"></i> Annuler
         </button>
-        <button type="button" class="btn btn-primary" ng-click="$parent.update(clickedStudent);$hide();">
+        <button type="button" class="btn btn-primary" ng-click="$parent.update(clickeduser);$hide();">
             <i class="fa fa-plus"></i> Modifier
         </button>
       </div>

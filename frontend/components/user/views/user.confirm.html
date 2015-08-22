@@ -1,4 +1,4 @@
-<div class="modal" tabindex="-1" role="dialog" aria-hidden="true" ng-controller="StudentController">
+<div class="modal" tabindex="-1" role="dialog" aria-hidden="true" ng-controller="userController">
 
   <div class="modal-dialog">
     <div class="modal-content">
@@ -9,7 +9,7 @@
       </div>
 
   <div class="modal-body">
-    <h4> Voulez-vous supprimer l'eleve <b>{{toDeleteStudent.firstname}} </b>? </h4>
+    <h4> Voulez-vous supprimer l'eleve <b>{{toDeleteuser.firstname}} </b>? </h4>
   </div>
           <div class="modal-footer">
 
@@ -17,7 +17,7 @@
                    <i class="fa fa-times"></i> Annuler
               </button>
 
-              <button type="button" class="btn btn-danger" ng-click="$parent.delete(toDeleteStudent);$hide();">
+              <button type="button" class="btn btn-danger" ng-click="$parent.delete(toDeleteuser);$hide();">
                     <i class="fa fa-trash-o"></i> Supprimer
               </button>
 
@@ -26,4 +26,4 @@
         </div>
 
       </div>
-    </div>
+</div>

@@ -71,7 +71,7 @@ $scope.logIn = function() {
         if(user!=null){
           $rootScope.user.loggedin = true;
           $rootScope.user.object = user;
-          $state.go('student');
+          $state.go('user');
         }
     });
 };
