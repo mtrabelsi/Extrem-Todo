@@ -1,15 +1,15 @@
 var userModule = angular.module('module.user', []);
 
-userModule.controller('userController', function($scope, Toolbar,LevelService ,userService) {
+userModule.controller('userController', function($scope, Toolbar ,userService) {
     Toolbar.Window().maximize();
 
     $scope.users = [];
     $scope.roles = ['Project Manager', 'Engineer', 'Intern'];
 
-    LevelService.getAllLevels(function(lvs) {
-        $scope.levels = lvs;
-        $scope.$apply();
-    });
+    // LevelService.getAllLevels(function(lvs) {
+    //     $scope.levels = lvs;
+    //     $scope.$apply();
+    // });
 
     userService.getAllusers(function(sts) {
         $scope.users = sts;

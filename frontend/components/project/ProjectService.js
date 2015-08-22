@@ -52,14 +52,14 @@ projectModule.factory('projectService', function(DB_URL) {
 						});
 
 					},
+
 					upsertproject: function(project,callback) {
 						var Datastore = require('nedb')
 						, path = require('path');
 						db = {};
 						db.projects = new Datastore({ filename:DB_URL+'/projects.db',autoload: true });
-
+						console.log(JSON.stringify(project));
 						db.projects.update({_id: project._id}, {
-							_id: project._id,
 							name: project.name,
 							description: project.description,
 							creationDate: new Date(),

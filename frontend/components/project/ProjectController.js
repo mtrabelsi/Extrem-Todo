@@ -40,7 +40,13 @@ $scope.deleteLastLine = function () {
 $scope.insertNewLine = function() {
     $scope.addedproject = {
       _id: '',
-
+      name : '',
+      description: '',
+      dueDate :'',
+      gitHost: '',
+      gitUsername : '',
+      gitProjectName : '',
+      isFinished : false
     };
 
    $scope.projects.push($scope.addedproject);

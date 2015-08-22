@@ -11,8 +11,8 @@ toolbarModule.factory('Toolbar', function($state) {
     win.close();
   }}));
 
-  admin.append(new gui.MenuItem({ label: 'Manage x',click: function() {
-        $state.go('level');
+  admin.append(new gui.MenuItem({ label: 'Manage Projects',click: function() {
+        $state.go('project');
   }}));
 
   admin.append(new gui.MenuItem({ label: 'Manage Users',enabled: false }));

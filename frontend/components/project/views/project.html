@@ -11,7 +11,7 @@
          <td data-title="'Project Name'">
            {{project.name}}
          </td>
-         <td data-title="'Project Name'">
+         <td data-title="'Creation Date'">
            {{project.creationDate}}
          </td>
          <td data-title="'Due Date'">
@@ -27,14 +27,11 @@
            {{project.gitProjectName}}
          </td>
 
-         <td data-title="'Prix'" width="200">
-             <button ng-click="loadPrices(project)" type="button" class="btn btn-default" data-animation="am-fade-and-scale" data-template="frontend/components/project/views/project.edit.html" data-placement="center" bs-modal="modal">
+         <td data-title="'Action'" width="200">
+             <button ng-click="loadproject(project)" type="button" class="btn btn-default" data-animation="am-fade-and-scale" data-template="frontend/components/project/views/project.edit.html" data-placement="center" bs-modal="modal">
                  <i class="fa fa-pencil-square-o"></i> Edit
              </button>
-         </td>
-         <td data-title="'Supprimer'" width="200" class="text-center">
-
-             <button ng-click="confirmDeletion(project)" type="button" class="btn btn-danger" data-animation="am-fade-and-scale" data-template="frontend/components/project/views/project.confirm.html" data-placement="center" bs-modal="modal">
+              <button ng-click="confirmDeletion(project)" type="button" class="btn btn-danger" data-animation="am-fade-and-scale" data-template="frontend/components/project/views/project.confirm.html" data-placement="center" bs-modal="modal">
                  <i class="fa fa-trash"></i> DELETE
              </button>
          </td>

@@ -1,32 +1,33 @@
 <div class="modal" tabindex="-1" role="dialog" aria-hidden="true" ng-controller="projectController">
-
-  <div class="modal-dialog">
-    <div class="modal-content">
-
-      <div class="modal-header">
-        <button type="button" class="close" aria-label="Close" ng-click="$hide()"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">add n</h4>
-      </div>
-
-  <div class="modal-body">
-
-        <form role="form">
-        n:  <input type="text" class="form-control" ng-model="addedproject._id"/>
-
-        </form>
-
-</div>
-
-      <div class="modal-footer">
-          <button type="button" class="btn btn-danger" ng-click="$parent.deleteLastLine();$hide();">
-              <i class="fa fa-times"></i> cancel
-          </button>
-          <button type="button" class="btn btn-primary" ng-click="upsert(addedproject);$hide();">
-              <i class="fa fa-plus"></i> add
-          </button>
-      </div>
-
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" aria-label="Close" ng-click="$hide()"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Add new Project</h4>
+            </div>
+            <div class="modal-body">
+                <form role="form">
+                    Name:
+                    <input type="text" class="form-control" ng-model="addedproject.name" /> Description:
+                    <input type="text" class="form-control" ng-model="addedproject.description" />
+                    <div class="form-group" ng-class="{'has-error': datepickerForm.date.$invalid}">
+                        <label class="control-label"><i class="fa fa-calendar"></i> Due Date </label>
+                        <input type="text" class="form-control" ng-model="addedproject.dueDate" name="date" bs-datepicker>
+                    </div>
+                    Git Host:
+                    <input type="text" class="form-control" ng-model="addedproject.gitHost" /> Git Username:
+                    <input type="text" class="form-control" ng-model="addedproject.gitUsername" /> Git Project Name:
+                    <input type="text" class="form-control" ng-model="addedproject.gitProjectName" />
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" ng-click="$parent.deleteLastLine();$hide();">
+                    <i class="fa fa-times"></i> CANCEL
+                </button>
+                <button type="button" class="btn btn-primary" ng-click="$parent.upsert(addedproject);$hide();">
+                    <i class="fa fa-plus"></i> Add
+                </button>
+            </div>
+        </div>
     </div>
-
-  </div>
 </div>

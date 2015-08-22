@@ -8,36 +8,36 @@ $urlRouterProvider.otherwise('/login');
 																			controller: 'LoginController'
                                 })
 
-                .state('level', {
-                                      url: '/level',
-                                      templateUrl: 'frontend/components/level/views/level.html',
-																			controller: 'LevelController'
+                .state('project', {
+                                      url: '/project',
+                                      templateUrl: 'frontend/components/project/views/project.html',
+																			controller: 'projectController'
                                 })
                 .state('user', {
                                       url: '/user',
                                       templateUrl: 'frontend/components/user/views/user.html',
                 											controller: 'userController'
                                 })
-                .state('payment', {
-                                      url: '/payment',
-                                      templateUrl: 'frontend/components/payment/views/payment.html',
-																			controller: 'PaymentController',
-                                      resolve: {
-                                           users: function (userService, $q) {
-                                               var defer = $q.defer();
-                                               //defer.promise.then(function () {
-                                               userService.getAllusers(function (sts) {
-                                                   //alert(JSON.stringify(sts));
-                                                   //return sts;
-                                                   defer.resolve(sts);
-                                               });
-                                               //})
-                                               //defer.resolve();
-                                               return defer.promise
-                                           }
-                                       }
+                // .state('payment', {
+                //                       url: '/payment',
+                //                       templateUrl: 'frontend/components/payment/views/payment.html',
+																// 			controller: 'PaymentController',
+                //                       resolve: {
+                //                            users: function (userService, $q) {
+                //                                var defer = $q.defer();
+                //                                //defer.promise.then(function () {
+                //                                userService.getAllusers(function (sts) {
+                //                                    //alert(JSON.stringify(sts));
+                //                                    //return sts;
+                //                                    defer.resolve(sts);
+                //                                });
+                //                                //})
+                //                                //defer.resolve();
+                //                                return defer.promise
+                //                            }
+                //                        }
 
-                                })
+                //                 })
 
 
 });
