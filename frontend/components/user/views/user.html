@@ -1,35 +1,26 @@
-
-
 <button ng-click="insertNewLine()" type="button" class="btn btn-primary" data-animation="am-fade-and-scale" data-template="frontend/components/user/views/user.create.html" data-placement="center" bs-modal="modal">
-    <i class="fa fa-user-plus"></i> Créer Eleve
+    <i class="fa fa-user-plus"></i> New User
 </button>
-
-<br/><br/>
-<table ng-table  class="table table-bordered table-hover">
-     <tr ng-repeat="user in users">
-         <td data-title="'Nom'">
-           {{user.firstname}}
-          </td>
-         <td data-title="'Prenom'">
-           {{user.lastname}}
-          </td>
-         <td data-title="'Niveau'">
-           {{user._levelId}}
-          </td>
-         <td data-title="'Classe'">
-           {{user.class}}
-          </td>
-
-         <td data-title="'Prix'" width="200" class="text-center">
-             <button ng-click="loadPrices(user)" type="button" class="btn btn-default" data-animation="am-fade-and-scale" data-template="frontend/components/user/views/user.edit.html" data-placement="center" bs-modal="modal">
-                 <i class="fa fa-pencil-square-o"></i> Voir prix
-             </button>
-         </td>
-         <td data-title="'Supprimer'" width="200" class="text-center">
-
-             <button ng-click="confirmDeletion(user)" type="button" class="btn btn-danger" data-animation="am-fade-and-scale" data-template="frontend/components/user/views/user.confirm.html" data-placement="center" bs-modal="modal">
-                 <i class="fa fa-trash"></i> Supprimer
-             </button>
-         </td>
-     </tr>
+<br/>
+<br/>
+<table ng-table class="table table-bordered table-hover">
+    <tr ng-repeat="user in users">
+        <td data-title="'Username'">
+            {{user.username}}
+        </td>
+        <td data-title="'Email'">
+            {{user.email}}
+        </td>
+        <td data-title="'Role'">
+            {{user.role}}
+        </td>
+        <td data-title="'Action'" width="200">
+            <button ng-click="loadUser(user)" type="button" class="btn btn-default" data-animation="am-fade-and-scale" data-template="frontend/components/user/views/user.edit.html" data-placement="center" bs-modal="modal">
+                <i class="fa fa-pencil-square-o"></i> Edit
+            </button>
+            <button ng-click="confirmDeletion(user)" type="button" class="btn btn-danger" data-animation="am-fade-and-scale" data-template="frontend/components/user/views/user.confirm.html" data-placement="center" bs-modal="modal">
+                <i class="fa fa-trash"></i> DELETE
+            </button>
+        </td>
+    </tr>
 </table>

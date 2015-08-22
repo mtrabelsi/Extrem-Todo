@@ -7,17 +7,18 @@
             </div>
             <div class="modal-body">
                 <form role="form">
-                    Name:       <input type="text" class="form-control" ng-model="addeduser.name" />
-                    Username:   <input type="password" class="form-control"  ng-model="addeduser.username"/>
-                    Password:   <input type="password" class="form-control"  ng-model="addeduser.password"/>
-                    Role:       <select class="form-control" ng-model="addeduser.role">
-                                  <option ng-repeat="item in roles" value="{{item}}">{{item}}</option>
-                                </select>
+                    Username:
+                    <input type="text" class="form-control" ng-model="addeduser.username" /> Email:
+                    <input type="email" class="form-control" ng-model="addeduser.email" /> Password:
+                    <input type="password" class="form-control" ng-model="addeduser.password" /> Role:
+                    <select class="form-control" ng-model="addeduser.role">
+                        <option ng-repeat="item in roles" value="{{item}}">{{item}}</option>
+                    </select>
                 </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" ng-click="$parent.deleteLastLine();$hide();">
-                    <i class="fa fa-times"></i> DELETE
+                    <i class="fa fa-times"></i> CANCEL
                 </button>
                 <button type="button" class="btn btn-primary" ng-click="upsert(addeduser);$hide();">
                     <i class="fa fa-plus"></i> CREATE

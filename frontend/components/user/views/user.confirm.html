@@ -5,20 +5,20 @@
 
       <div class="modal-header">
         <button type="button" class="close" aria-label="Close" ng-click="$hide()"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Supprimer Eleve</h4>
+        <h4 class="modal-title">Delete User</h4>
       </div>
 
   <div class="modal-body">
-    <h4> Voulez-vous supprimer l'eleve <b>{{toDeleteuser.firstname}} </b>? </h4>
+    <h4> would you delete <b>{{toDeleteuser.username}} </b>? </h4>
   </div>
           <div class="modal-footer">
 
               <button type="button" class="btn btn-success" ng-click="$hide();">
-                   <i class="fa fa-times"></i> Annuler
+                   <i class="fa fa-times"></i> CANCEL
               </button>
 
               <button type="button" class="btn btn-danger" ng-click="$parent.delete(toDeleteuser);$hide();">
-                    <i class="fa fa-trash-o"></i> Supprimer
+                    <i class="fa fa-trash-o"></i> Delete
               </button>
 
           </div>

@@ -7,21 +7,21 @@ toolbarModule.factory('Toolbar', function($state) {
   var file = new gui.Menu();
   var admin = new gui.Menu();
 
-  file.append(new gui.MenuItem({ label: 'Fermer', click:function(){
+  file.append(new gui.MenuItem({ label: 'Close', click:function(){
     win.close();
   }}));
 
-  admin.append(new gui.MenuItem({ label: 'Gerer les Niveaux/Prix',click: function() {
+  admin.append(new gui.MenuItem({ label: 'Manage x',click: function() {
         $state.go('level');
   }}));
 
-  admin.append(new gui.MenuItem({ label: 'Gerer les Eleves',enabled: false }));
+  admin.append(new gui.MenuItem({ label: 'Manage Users',enabled: false }));
   admin.append(new gui.MenuItem({ type: 'separator' }));
-  admin.append(new gui.MenuItem({ label: 'Gerer les Utilisateurs' }));
+  admin.append(new gui.MenuItem({ label: 'Privacy' }));
 
   var menubar = new gui.Menu({ type: 'menubar' });
 
-   menubar.append(new gui.MenuItem({ label: 'Fichier', submenu: file}));
+   menubar.append(new gui.MenuItem({ label: 'File', submenu: file}));
    menubar.append(new gui.MenuItem({ label: 'Administration', submenu: admin}));
 
    win.menu = menubar;

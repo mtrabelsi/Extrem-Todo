@@ -42,15 +42,19 @@ userModule.factory('userService', function(DB_URL) {
 					},
 					upsertuser: function(user,callback) {
 
+
+
+// {"username":"admin","password":"0000","admin":true,"email":"marwen109@gmail.com","asp":"notyet","_id":"AD7EnP6NtEtC8gS0"}
+// {"username":"agent","password":"0000","admin":true,"email":"marwen109@gmail.com","asp":"notyet","_id":"io19OCjH9GSAEM9l"}
 						var Datastore = require('nedb')
 						, path = require('path');
 						db = {};
 						db.users = new Datastore({ filename:DB_URL+'/users.db',autoload: true });
 
 						db.users.update({_id: user._id}, {
-									name: user.name,
 									username: user.username,
 									password: user.password,
+									email :user.email,
 									role: user.role
 						},{upsert:true}, function(err,numReplaced,lv) {
 							if(err)

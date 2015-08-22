@@ -1,5 +1,5 @@
-# Student Management System
+# Extrem TODO list 
 
-A student management system implemented with Angular.js and node.js module (NW.js)
+A New generation TODO list with a lot of important features that improves the employee productivity 
 
 

@@ -55,17 +55,17 @@ userModule.controller('userController', function($scope, Toolbar,LevelService ,u
 
     $scope.insertNewLine = function() {
         $scope.addeduser = {
-            name: '',
             username: '',
             password: '',
+            email: '',
             role :''
         };
 
         $scope.users.push($scope.addeduser);
     };
 
-    // $scope.loadPrices = function(user) {
-    //     $scope.clickeduser = user;
-    // };
+    $scope.loadUser = function(user) {
+        $scope.clickeduser = user;
+    };
 
 });

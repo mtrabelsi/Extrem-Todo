@@ -10,7 +10,7 @@ $rootScope.user = {
 };
 
 $scope.form = {
-  username : 'admin',
+  username : 'dorra',
   password: '0000'
 };
 
